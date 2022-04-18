@@ -1,0 +1,17 @@
+package ezmet.enver.calcualter;
+
+import com.godtsoft.diyjava.DIYWindow;
+
+public class Calculater extends DIYWindow {
+
+	public Calculater() {
+		setFontSize(25);
+		print(5);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

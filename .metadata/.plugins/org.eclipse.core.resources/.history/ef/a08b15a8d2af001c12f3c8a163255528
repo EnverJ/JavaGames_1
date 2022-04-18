@@ -1,0 +1,18 @@
+package ezmet.enver.calcualter;
+
+public class Lesson_2 {
+	// convert a String to an Integer
+
+	public Lesson_2() {
+		int a= input();
+		print ("a is " + a);
+		
+		
+	}
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

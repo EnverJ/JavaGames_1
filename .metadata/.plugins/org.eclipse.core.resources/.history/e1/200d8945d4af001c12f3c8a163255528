@@ -1,0 +1,26 @@
+package ezmet.enver.calcualter;
+
+import com.godtsoft.diyjava.DIYWindow;
+
+public class Calculater_2 extends DIYWindow {
+
+	public Calculater_2() {
+		// Convert a String to an Integer
+		setFontSize(25);
+		print("Enter a number");
+		String s=input();
+        int a=Integer.parseInt(s);
+		print("Enter a number");
+		s=input();
+		int d=Integer.parseInt(s);
+		int b=7;
+		print("c is "+(a+b));
+		
+	}
+
+	public static void main(String[] args) {
+		new Calculater_2();
+
+	}
+
+}

@@ -1,0 +1,8 @@
+INDEX VERSION 1.130+C:\Users\enlem\workspace\DoITyourself\.metadata\.plugins\org.eclipse.jdt.core
+3068451677.index
+717391483.index
+1664405848.index
+3179393793.index
+3575056136.index
+2608311142.index
+569429718.index

@@ -1,0 +1,7 @@
+package ezmet.enver.mywindow;
+
+import com.godtsoft.diyjava.DIYWindow;
+
+public class MyWindow extends DIYWindow {
+
+}

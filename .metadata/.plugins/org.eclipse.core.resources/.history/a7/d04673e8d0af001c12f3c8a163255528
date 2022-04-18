@@ -1,0 +1,16 @@
+package ezmet.enver.calcualter;
+
+import com.godtsoft.diyjava.DIYWindow;
+
+public class Calculater extends DIYWindow {
+
+	public Calculater() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
