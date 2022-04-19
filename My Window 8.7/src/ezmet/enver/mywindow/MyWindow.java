@@ -4,7 +4,7 @@ import com.godtsoft.diyjava.DIYWindow;
 
 public class MyWindow extends DIYWindow {
 	
-	private int promtForInt(String prompt){
+	protected int promtForInt(String prompt){
 		
 		int i=0;
 		print(prompt);
