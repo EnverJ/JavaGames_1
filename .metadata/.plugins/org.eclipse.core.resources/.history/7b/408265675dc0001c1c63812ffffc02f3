@@ -10,7 +10,7 @@ public class GuessMyNumber extends MyWindow {
 		Random rand=new Random();
 		int myNumber=rand.nextInt(101);
 		int myGuess=promtForInt("Guess my number between 0 and 100");
-		int count=1;
+		int count=myNumber;
 		while(myNumber!=myGuess){
 			if(myGuess<myNumber){
 			myGuess=promtForInt("You guessed too low,Please try again.");
@@ -18,7 +18,7 @@ public class GuessMyNumber extends MyWindow {
 			else if(myGuess>myNumber){
 				myGuess=promtForInt("You guessed too high.Please try again.");
 			}
-			count+=1;
+			count=count+1;
 		}
 		print("You gueesed it in "+count +" tries");
 		
