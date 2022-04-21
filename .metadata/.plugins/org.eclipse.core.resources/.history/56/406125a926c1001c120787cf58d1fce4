@@ -1,0 +1,17 @@
+package ezmet.enver.temperatureconverter;
+
+import ezmet.enver.mywindow.MyWindow;
+
+public class TemperatureConverter extends MyWindow {
+
+	public TemperatureConverter() {
+		print(1+2+3);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new TemperatureConverter();
+
+	}
+
+}
