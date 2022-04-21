@@ -1,0 +1,19 @@
+package ezmet.enver.temperatureconverter;
+
+import ezmet.enver.mywindow.MyWindow;
+
+public class TemperatureConverter extends MyWindow {
+
+	public TemperatureConverter() {
+		setFontSize(26);
+		double f=promtForDouble("Enter degree Fahrenheit");
+		print((f-32)*5/9+("degree Celsius"));
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new TemperatureConverter();
+
+	}
+
+}
