@@ -1,0 +1,16 @@
+package ezmet.enver.wordscramble;
+
+import com.godtsoft.diyjava.DIYWindow;
+
+public class WordScramble extends DIYWindow {
+
+	public WordScramble() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

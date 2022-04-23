@@ -1,0 +1,14 @@
+package ezmet.enver.wordscrammble;
+
+public class WordScramble {
+
+	public WordScramble() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
