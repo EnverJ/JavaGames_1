@@ -1,0 +1,22 @@
+package ezmet.enver.wordscramble;
+
+import com.godtsoft.diyjava.DIYWindow;
+
+public class WordScramble extends DIYWindow {
+
+	public WordScramble() {
+		// TODO Auto-generated constructor stub
+		scramble("ANIMALS");
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new WordScramble();
+
+	}
+	private String scramble(String word){
+     String scrambled="";
+      return scrambled;
+
+}
+}
