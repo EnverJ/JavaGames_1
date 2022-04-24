@@ -9,7 +9,7 @@ public class WordScramble extends MyWindow {
 
 	public WordScramble() {
 		setFontSize(30);
-		String word="ELEPHANT";
+		String word="ANIMALS";
 		String scrambled=scramble(word);
 	//	print(scrambled);
 		System.out.println(scrambled);
@@ -29,10 +29,10 @@ public class WordScramble extends MyWindow {
      int index=rand.nextInt(length);
      System.out.println("index= "+index);
      String letter=word.substring(index,index+1);
-    System.out.println("letter= "+letter);
+    System.out.println(letter);
     String firstString=word.substring(0, index);
      String secondString=word.substring(index+1);
-     word=firstString+secondString;
+     word=secondString+firstString;
      System.out.println("word= "+word);
      scrambled+=letter;
      System.out.println("scralmbled= "+scrambled);
