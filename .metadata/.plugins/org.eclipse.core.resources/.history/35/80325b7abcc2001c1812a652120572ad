@@ -18,7 +18,6 @@ public class WordScramble extends MyWindow {
 
 	}
 	private String scramble(String word){
-		// Please replace the space with the length of the string
      String scrambled="";
       return scrambled;
 
