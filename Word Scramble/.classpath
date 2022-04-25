@@ -4,5 +4,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/My Window 8.7"/>
 	<classpathentry kind="lib" path="C:/Users/enlem/workspace/DoITyourself/DIYJava.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/My String Method"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
