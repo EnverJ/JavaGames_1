@@ -10,20 +10,13 @@ public class MyStringMethod {
      while(word.length()>0){
      int length=word.length();
      int index=rand.nextInt(length);
-     System.out.println("index= "+index);
-     String letter=word.substring(index,index+1);
- //    print("letter= "+letter);
-    System.out.println("letter= "+letter);
+    String letter=word.substring(index,index+1);
     String firstString=word.substring(0, index);
      String secondString=word.substring(index+1);
      word=firstString+secondString;
-   //  print("word= "+word);
-     System.out.println("word= "+word);
      scrambled+=letter;
-  //   print("scralmbled= "+scrambled);
-     System.out.println("scralmbled= "+scrambled);
      }
-      return word;
+      return scrambled;
 
 }
 
