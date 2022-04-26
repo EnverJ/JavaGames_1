@@ -1,0 +1,16 @@
+package ezmet.enver.secretcodekey;
+
+import com.godtsoft.diyjava.DIYWindow;
+
+public class SecretCodeKey extends DIYWindow {
+
+	public SecretCodeKey() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

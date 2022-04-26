@@ -1,7 +1,0 @@
-package ezmet.enver.mywindow;
-
-import DIYWindwo;
-
-public class MyWindow extends DIYWindwo {
-
-}

@@ -1,0 +1,22 @@
+package ezmet.enver.secretcodekey;
+
+import ezmet.enver.mystringmethods.MyStringMethod;
+import ezmet.enver.mywindow.MyWindow;
+
+public class SecretCodeKey extends MyWindow {
+
+	public SecretCodeKey() {
+		// TODO Auto-generated constructor stub
+		String alphabet="ABCDEFGHIGKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+		String scrambled=MyStringMethod.scramble(alphabet);
+		print(alphabet);
+		print(scrambled);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new SecretCodeKey();
+
+	}
+
+}
