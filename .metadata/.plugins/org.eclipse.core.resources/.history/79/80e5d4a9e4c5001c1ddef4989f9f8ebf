@@ -1,0 +1,16 @@
+package ezmet.enver.secretcode;
+
+import ezmet.enver.mywindow.MyWindow;
+
+public class SecretCode extends MyWindow {
+
+	public SecretCode() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
