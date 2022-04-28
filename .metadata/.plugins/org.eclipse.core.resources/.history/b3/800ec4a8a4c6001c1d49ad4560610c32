@@ -20,15 +20,25 @@ public class SecretCode extends MyWindow {
 			BufferedReader in = new BufferedReader(new FileReader(new File(filename)));
 			try {
 				String alphabet = in.readLine();
-				String key = in.readLine();
-				in.close();
-				String messageToEncode=promtFor("Enter a message");
-				String encodeMessage=encode(messageToEncode,alphabet,key);
-				print(encodeMessage);
-	//			print(alphabet);
+				print(alphabet);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				print("Could not be open file " + filename + ".");
+			}
+
+			try {
+				String key = in.readLine();
+				print(key);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				print("Could not be open file " + filename + ".");
+
+			}
+			try {
+				in.close();
+			} catch (IOException e) {
+				print("Could not be open file " + filename + ".");
+
 			}
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
