@@ -40,14 +40,9 @@ public class SecretCode extends MyWindow {
     	String newMessage=message+ " from "+fromAlphabet+" to "+toAlphabet;
     	String letter=message.substring(0,1);
     	int letterPos=fromAlphabet.indexOf(letter);
-    	for(int i=0;i<message.length();i++){
     	if(letterPos>-1){
-    		String newLetter=toAlphabet.substring(letterPos,letterPos+1);
-    		newMessage+=newLetter;
-    	}
-    	else{
+    		String newLetter=toAlphabet.substring(0, 1);
     		newMessage+=letter;
-    	}
     	}
     	return newMessage;
     	
