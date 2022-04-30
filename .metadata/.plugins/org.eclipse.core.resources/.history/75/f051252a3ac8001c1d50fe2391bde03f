@@ -23,10 +23,9 @@ public class SecretCode extends MyWindow {
 				String key = in.readLine();
 				in.close();
 				String messageToEncode=promtFor("Enter a message: ");
-				String encodedMessage=encode(messageToEncode,alphabet,key);
-				print(encodedMessage);
-				String decodedMessage=encode(encodedMessage,alphabet,key);
-				print(decodedMessage);
+				String encodeMessage=encode(messageToEncode,alphabet,key);
+				print(encodeMessage);
+	//			print(alphabet);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				print("Could not be open file " + filename + ".");
