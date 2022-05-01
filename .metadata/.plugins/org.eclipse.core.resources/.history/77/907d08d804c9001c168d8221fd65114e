@@ -1,0 +1,21 @@
+package ezmet.enver.wordmastermind;
+
+import ezmet.enver.mywindow.MyWindow;
+
+public class WordMastermind extends MyWindow {
+
+	public WordMastermind() {
+		boolean repeat=true;
+		while(repeat){
+			print("Hello");
+			boolean yourN=prometForYesNo("Do you want to repeat?");
+			
+		}
+	}
+
+	public static void main(String[] args) {
+		new WordMastermind();
+
+	}
+
+}
