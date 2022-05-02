@@ -20,4 +20,18 @@ public class MyStringMethod {
 
 }
 
+	public static String replaceStringAt(String originalString, int index, String replaceString) {
+		String newString = originalString;
+		if (index <= originalString.length()) {
+			int roomAvailable = originalString.length() - index;
+			if (replaceString.length() > roomAvailable) {
+				replaceString = replaceString.substring(0, roomAvailable);
+			}
+			String firstString = originalString.substring(0, index);
+			String secondString = originalString.substring(index + replaceString.length());
+			newString = firstString + replaceString + secondString;
+		}
+		return newString;
+
+	}
 }
