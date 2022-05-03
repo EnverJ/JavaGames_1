@@ -28,7 +28,7 @@ public class WordMastermind extends MyWindow {
 			// if guess letter is same as word letter, set clue to 0 and word to
 			// -
 			if (guessLetter.equals(wordLetter)) {
-				clue = MyStringMethod.replaceStringAt(clue, i, "O");
+				clue = MyStringMethod.replaceStringAt(clue, i, "o");
 				word = MyStringMethod.replaceStringAt(word, i, "-");
 			}
 

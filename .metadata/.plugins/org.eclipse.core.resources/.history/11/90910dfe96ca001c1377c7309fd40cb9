@@ -28,7 +28,7 @@ public class WordMastermind extends MyWindow {
 			// if guess letter is same as word letter, set clue to 0 and word to
 			// -
 			if (guessLetter.equals(wordLetter)) {
-				clue = MyStringMethod.replaceStringAt(clue, i, "O");
+				clue = MyStringMethod.replaceStringAt(clue, i, "o");
 				word = MyStringMethod.replaceStringAt(word, i, "-");
 			}
 
@@ -41,9 +41,9 @@ public class WordMastermind extends MyWindow {
 			// get the guess letter at position i
 			String letter = guess.substring(j, j + 1);
 			// if the letter is in word(indexOf>-1)
-			int letterLoc = word.indexOf(letter);
+			int letterLoc = letter.indexOf(j);
 			if (letterLoc > -1) {
-				word = MyStringMethod.replaceStringAt(word, letterLoc, "-");
+				word = MyStringMethod.replaceStringAt(word, j, "-");
 				// set clue at the loop index to X if it is still -
 				String clueLetter = clue.substring(j, j + 1);
 				if (clueLetter.equals("-")) {
