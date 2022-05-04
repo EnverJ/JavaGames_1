@@ -10,37 +10,27 @@ public class WordMastermind extends MyWindow {
 	public WordMastermind() {
 		setFontSize(30);
 		word = "quit";
-		word=word.toUpperCase();
-		print("I'm thinking of a 4 letter word.");
-		print(" I will give you a clues: ");
-		print(" An " +"O"+" means you guessed the correct letter in the correct position.");
-		print(" An"+" X"+" means you guessed the correct letter but in the wrong position.");
-		String guess = promtFor("Guees a word.");
-		int count=1;
-		guess=guess.toUpperCase();
-		String originalWord = word;
-		boolean solved = false;
-		if(guess.length()==4){
-		while (!solved) {
-			word = originalWord;
-			clue = "----";
+	//	String guess = "lint";
+		String guess =promtFor("Guees a word.");
+		String originalWord=word;
+		boolean solved=false;
+		while(!solved){
+			word=originalWord;
+			clue="----";
 			findRightPlaceLetters(guess);
 			findWrongPleaceLetters(guess);
-			if (guess.equals(originalWord)) {
-				solved = true;
-			} else {
-				guess = promtFor(clue);
-				guess=guess.toUpperCase();
-				count+=1;
+			if(guess.equals(originalWord)){
+				solved=true;
+			}else{
+				guess=promtFor(clue);
 			}
 
+			
 		}
-		}else{
-			guess=promtFor("Please guess 4 letters word.");
-			guess=guess.toUpperCase();
-		}
-		print("OOOO");
-		print("Congratulation!!! you guessed it in "+ count+" tries!");
+	//	clue = "----";
+		findRightPlaceLetters(guess);
+		findWrongPleaceLetters(guess);
+		print(clue);
 	}
 
 	private void findRightPlaceLetters(String guess) {

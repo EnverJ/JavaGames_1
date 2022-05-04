@@ -40,7 +40,7 @@ public class WordMastermind extends MyWindow {
 			guess=guess.toUpperCase();
 		}
 		print("OOOO");
-		print("Congratulation!!! you guessed it in "+ count+" tries!");
+		print("Congratulation!!! you guessed it in "+ count+"tries!");
 	}
 
 	private void findRightPlaceLetters(String guess) {
