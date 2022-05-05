@@ -24,7 +24,6 @@ public class WordMastermind extends MyWindow {
 		while (!solved) {
 			word = originalWord;
 			clue = "----";
-			
 			findRightPlaceLetters(guess);
 			findWrongPleaceLetters(guess);
 			if (guess.equals(originalWord)) {
