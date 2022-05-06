@@ -1,47 +1,82 @@
 package ezmet.enver.wordmastermind;
 
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Random;
+
 import ezmet.enver.mystringmethods.MyStringMethod;
 import ezmet.enver.mywindow.MyWindow;
 
 public class WordMastermind extends MyWindow {
 	private String word;
 	private String clue;
+	private static final int NUMBEROFWORDS = 342;
+	private static final String FILENAME = "wordMasterMind.txt";
 
 	public WordMastermind() {
 		setFontSize(30);
-		word = "quit";
-		word=word.toUpperCase();
-		print("I'm thinking of a 4 letter word.");
-		print(" I will give you a clues: ");
-		print(" An " +"O"+" means you guessed the correct letter in the correct position.");
-		print(" An"+" X"+" means you guessed the correct letter but in the wrong position.");
-		String guess = promtFor("Guees a word.");
-		int count=1;
-		guess=guess.toUpperCase();
-		String originalWord = word;
-		boolean solved = false;
-		if(guess.length()==4){
-		while (!solved) {
-			word = originalWord;
-			clue = "----";
-			
-			findRightPlaceLetters(guess);
-			findWrongPleaceLetters(guess);
-			if (guess.equals(originalWord)) {
-				solved = true;
-			} else {
-				guess = promtFor(clue);
-				guess=guess.toUpperCase();
-				count+=1;
+		String words[] = new String[NUMBEROFWORDS];
+		Random rand = new Random();
+		try {
+			BufferedReader in = new BufferedReader(new FileReader(new File(FILENAME)));
+			for (int i = 0; i < NUMBEROFWORDS; i++) {
+				words[i] = in.readLine();
 			}
+			in.close();
+			boolean repeat = true;
+			while (repeat) {
+				int pick = rand.nextInt(NUMBEROFWORDS);
+				word = words[pick];
+				// word = "quit";
+				word = word.toUpperCase();
+				print("I'm thinking of a 4 letter word.");
+				print(" I will give you a clues: ");
+				print(" An " + "O" + " means you guessed the correct letter in the correct position.");
+				print(" An" + " X" + " means you guessed the correct letter but in the wrong position.");
+				String guess = promtFor("Guees a word.");
+				guess = guess.toUpperCase();
+				int count = 1;
+				guess = guess.toUpperCase();
+				String originalWord = word;
+				boolean solved = false;
+				while (!solved) {
+					if (guess.length() == 4) {
+						word = originalWord;
+						clue = "----";
+						findRightPlaceLetters(guess);
+						findWrongPleaceLetters(guess);
+						if (guess.equals(originalWord)) {
+							solved = true;
+						} else {
+							guess = promtFor(clue);
+							guess = guess.toUpperCase();
+							count += 1;
+						}
 
+					} else {
+						guess = promtFor("Please guess 4 letters word.");
+
+					}
+				}
+				print("OOOO");
+				print("Congratulation!!! you guessed it in " + count + " tries!");
+				print();
+				repeat = prometForYesNo("Do you want to play again?");
+				print();
+			}
+			System.exit(0);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			print("Could not read from file " + FILENAME);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			print("coul not  read the file " + FILENAME);
 		}
-		}else{
-			guess=promtFor("Please guess 4 letters word.");
-			guess=guess.toUpperCase();
-		}
-		print("OOOO");
-		print("Congratulation!!! you guessed it in "+ count+" tries!");
+
 	}
 
 	private void findRightPlaceLetters(String guess) {
