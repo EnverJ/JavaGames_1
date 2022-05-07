@@ -1,0 +1,29 @@
+package ezmet.enver.hangman;
+
+import ezmet.enver.mywindow.MyWindow;
+
+public class Hangman extends MyWindow {
+	setFontSize(30);
+	private String phrase;
+	private String clue;
+	private String wrongLetters;
+
+	public Hangman() {
+		// TODO Auto-generated constructor stub
+		printPuzzle();
+	}
+	private void printPuzzle(){
+		print("_______");
+		print("|    O");
+		print("|  --|--");
+		print("|  _/ \\_");
+		print("|         ");
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new Hangman();
+
+	}
+
+}
