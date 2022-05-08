@@ -9,7 +9,7 @@ public class Hangman extends MyWindow {
 
 	public Hangman() {
 		setFontSize(30);
-		wrongLetters="ABCDEFGHIK";
+		wrongLetters="ABCDEFGHI";
 		printPuzzle();
 	}
 	private void printPuzzle(){
@@ -66,14 +66,14 @@ public class Hangman extends MyWindow {
 		case 8:
 			print("|   O");
 			print("| --|-- "+wrongLetters);
-			print("| _/");
-			print("| ");
+			print("|  /");
+			print("| -");
 			break;
 		case 9:
 			print("|   O");
 			print("| --|-- "+wrongLetters);
-			print("| _/ \\");
-			print("| ");
+			print("|  / \\");
+			print("| -");
 			break;
 		case 10:
 			print("|    O");
