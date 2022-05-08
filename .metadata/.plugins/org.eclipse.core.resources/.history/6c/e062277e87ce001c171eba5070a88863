@@ -9,7 +9,7 @@ public class Hangman extends MyWindow {
 
 	public Hangman() {
 		setFontSize(30);
-		wrongLetters="ABCDEFGHIK";
+		wrongLetters="ABCDEFGHIKL";
 		printPuzzle();
 	}
 	private void printPuzzle(){
