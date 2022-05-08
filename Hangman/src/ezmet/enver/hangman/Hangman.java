@@ -14,10 +14,40 @@ public class Hangman extends MyWindow {
 	}
 	private void printPuzzle(){
 		print("_______");
-		print("|    O");
-		print("|  --|--     "+wrongLetters);
-		print("|  _/ \\_");
+		switch(wrongLetters.length()){
+		case 0:
+			print("|");
+			print("|       "+wrongLetters);
+			print("|");
+		    break;
+		case 1:
+			print("|    O");
+			break;
+		case 2:
+			break;
+		case 3:
+			break;
+		case 4:
+			break;
+		case 5:
+			break;
+		case 6:
+			break;
+		case 7:
+			break;
+		case 8:
+			break;
+		case 9:
+			break;
+		case 10:
+			print("|    O");
+			print("|  --|--     "+wrongLetters);
+			print("|  _/ \\_");
+			break;
+			
+		}
 		print("|");
+		
 	}
 
 	public static void main(String[] args) {
