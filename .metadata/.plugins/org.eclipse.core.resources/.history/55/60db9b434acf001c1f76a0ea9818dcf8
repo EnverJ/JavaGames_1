@@ -85,20 +85,20 @@ public class Hangman extends MyWindow {
 			break;
 
 		}
-		print("|     " + clue);
+		print("|");
 
 	}
 
 	private void blankOutClue() {
 
 		clue = "";
-		for (int i = 0; i < phrase.length(); i++) {
+		for (int i = 0; i < clue.length(); i++) {
 			char letter = phrase.charAt(i);
 			if (letter == ' ') {
 				clue += ' ';
 
 			} else {
-				clue += '-';
+				clue += '_';
 			}
 
 		}
