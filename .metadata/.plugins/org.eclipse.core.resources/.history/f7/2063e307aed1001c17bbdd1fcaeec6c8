@@ -20,7 +20,7 @@ public class Hangman extends MyWindow {
 	public Hangman() {
 		setFontSize(30);
 		ArrayList<String> phrases = new ArrayList<String>();
-		Random rand = new Random();
+		Random rand=new Random();
 		try {
 			BufferedReader in = new BufferedReader(new FileReader(new File(FILENAME)));
 			String s = in.readLine();
@@ -29,47 +29,40 @@ public class Hangman extends MyWindow {
 				s = in.readLine();
 			}
 			in.close();
-			int numberOfPhrases = phrases.size();
-			boolean again = true;
-			while (again) {
-				int pick = rand.nextInt(numberOfPhrases);
-				phrase = phrases.get(pick);
-				phrase = phrase.toUpperCase();
-				blankOutClue();
-				wrongLetters = "";
-				printPuzzle();
-				while (clue.contains("-") && wrongLetters.length() < 10) {
-					String guess = promtFor("please guess a letter!");
-					guess = guess.toUpperCase();
-					if (guess.length() != 1) {
-						print("You must contain only one letter. please guessa again!!!");
-					} else if (clue.contains(guess) || wrongLetters.contains(guess)) {
-						print("You have guessed " + guess + "." + "Please guessa another letter!");
 
-					} else {
-						boolean found = false;
-						int index = phrase.indexOf(guess);
-						while (index > -1) {
-							found = true;
-							clue = MyStringMethod.replaceStringAt(clue, index, guess);
-							index = phrase.indexOf(guess, index + 1);
-							printPuzzle();
-						}
+			phrase = "HELLO WORLD";
+			blankOutClue();
+			wrongLetters = "";
+			printPuzzle();
+			while (clue.contains("-") && wrongLetters.length() < 10) {
+				String guess = promtFor("please guess a letter!");
+				guess = guess.toUpperCase();
+				if (guess.length() != 1) {
+					print("You must contain only one letter. please guessa again!!!");
+				} else if (clue.contains(guess) || wrongLetters.contains(guess)) {
+					print("You have guessed " + guess + "." + "Please guessa another letter!");
 
-						if (!found) {
-							wrongLetters += guess;
-						}
+				} else {
+					boolean found = false;
+					int index = phrase.indexOf(guess);
+					while (index > -1) {
+						found = true;
+						clue = MyStringMethod.replaceStringAt(clue, index, guess);
+						index = phrase.indexOf(guess, index + 1);
 						printPuzzle();
 					}
+
+					if (!found) {
+						wrongLetters += guess;
+					}
+					printPuzzle();
 				}
-				if (!clue.contains("-")) {
-					print("Congratulation!!! you sloved the puzzle.");
-				} else {
-					print("Sorry, you lose. The pharse was " + phrase);
-				}
-				again = prometForYesNo("Do you want to play again?");
 			}
-			System.exit(0);
+			if (!clue.contains("-")) {
+				print("Congratulation!!! you sloved the puzzle.");
+			} else {
+				print("Sorry, you lose. The pharse was " + phrase);
+			}
 		} catch (FileNotFoundException e) {
 			print("Could not find the file " + FILENAME);
 		} catch (IOException e) {
