@@ -35,6 +35,7 @@ public class Hangman extends MyWindow {
 				int pick = rand.nextInt(numberOfPhrases);
 				phrase = phrases.get(pick);
 				phrase = phrase.toUpperCase();
+
 				blankOutClue();
 				wrongLetters = "";
 				printPuzzle();
