@@ -1,0 +1,14 @@
+package ezmet.enver.crazyeights;
+
+public class CrazyEights {
+
+	public CrazyEights() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
