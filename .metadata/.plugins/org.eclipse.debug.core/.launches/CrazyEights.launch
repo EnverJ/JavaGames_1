@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/Crazy Eights/src/ezmet/enver/crazyeights/CrazyEights.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="ezmet.enver.crazyeights.CrazyEights"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="Crazy Eights"/>
+</launchConfiguration>

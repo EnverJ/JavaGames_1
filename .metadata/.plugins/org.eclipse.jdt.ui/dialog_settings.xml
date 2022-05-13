@@ -53,10 +53,11 @@
 	<section name="FatJarPackageWizard">
 		<item value="C:\Users\enlem\workspace\DoITyourself" key="FatJarPackageWizardPage.ANTSCRIPT_LOCATION"/>
 		<item value="GuessMyNumber - Guess My Number 9" key="FatJarPackageWizardPage.LAUNCH_CONFIGURATION_SELECTION_NAME"/>
-		<item value="GuessMyNumber.jar" key="FatJarPackageWizardPage.DESTINATION_PATH_SELECTION"/>
+		<item value="Hangman.jar" key="FatJarPackageWizardPage.DESTINATION_PATH_SELECTION"/>
 		<item value="false" key="FatJarPackageWizardPage.ANTSCRIPT_SAVE"/>
 		<item value="2" key="FatJarPackageWizardPage.LIBRARY_HANDLING"/>
 		<list key="FatJarPackageWizardPage.DESTINATION_NAMES_ID">
+			<item value="Hangman.jar"/>
 			<item value="GuessMyNumber.jar"/>
 			<item value="SillyStory.jar"/>
 			<item value="ASCIIArt.jar"/>
