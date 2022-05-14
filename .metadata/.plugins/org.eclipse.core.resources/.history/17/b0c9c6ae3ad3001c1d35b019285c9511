@@ -1,0 +1,20 @@
+package ezmet.enver.cards;
+
+public class Card {
+	private char rank=' ';
+	private char suit=' ';
+	private static final String RANKS="A23456789TJQK";
+	private static final String SUITS="HDCS";
+	
+	public Card(String rs){
+		rank=rs.charAt(0);
+		suit=rs.charAt(1);
+	}
+	
+	public String toString(){
+		String rs=""+rank+suit;
+		return rs;
+		
+	}
+
+}
