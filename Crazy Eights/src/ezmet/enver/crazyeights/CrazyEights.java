@@ -7,7 +7,7 @@ public class CrazyEights extends MyWindow {
 
 	public CrazyEights() {
 		setFontSize(30);
-		Card card=new Card();
+		Card card=new Card(33);
 //		print(""+card);//or
 		print(card.toString());
 	}
