@@ -15,6 +15,50 @@ public class Card {
 		suit=SUITS.charAt(id/13);
 		
 	}
+	public char getRank(){
+		return rank;
+	}
+	public char getSuit(){
+		return suit;
+	}
+	public boolean isValid(){
+		boolean valid=false;
+		if(suit!=' '){
+			valid=true;
+		}
+		return valid;
+	}
+	public boolean equals(Card card){
+		boolean equals=false;
+		if((card.suit==suit)&&(card.rank==rank)){
+			equals=true;
+		}
+		return equals;
+	}
+	public boolean isGreaterThan(Card card){
+		boolean greaterThan=false;
+		char cardSuit=card.suit;
+		char cardRank=card.rank;
+		if(SUITS.indexOf(suit)>SUITS.indexOf(cardSuit)){
+			greaterThan=true;
+		}
+		else if(suit==cardSuit){
+			if(RANKS.indexOf(rank)>RANKS.indexOf(cardRank)){
+				greaterThan=true;
+			}
+			
+		}
+		return greaterThan;
+	}
+
+	public static boolean isValidSuit(char c) {
+		boolean valid = false;
+		if (SUITS.indexOf(c) > -1) {
+			valid = true;
+		}
+		return valid;
+	}
+	
 	
 	public Card(String rs){
 		if(rs.length()==2){
