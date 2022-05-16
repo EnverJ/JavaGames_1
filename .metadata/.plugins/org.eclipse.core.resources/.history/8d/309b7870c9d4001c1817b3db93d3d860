@@ -39,7 +39,7 @@ public class CrazyEights extends MyWindow {
 		} */
 		
 		Deck deck=new Deck();
-		print(deck.toString());
+		print(deck);
 	}
 	
 

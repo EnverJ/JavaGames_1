@@ -1,14 +1,17 @@
 package ezmet.enver.crazyeights;
 
 import ezmet.enver.cards.Card;
-import ezmet.enver.cards.Deck;
 import ezmet.enver.mywindow.MyWindow;
 
 public class CrazyEights extends MyWindow {
 
 	public CrazyEights() {
-		setFontSize(30);		
-	/*	Card card1= new Card("HQ");
+		setFontSize(30);
+//		Card card=new Card(33);
+//		print(""+card);//or
+//		print(card.toString());
+		
+		Card card1= new Card("HQ");
 		print(card1.toString());
 		Card card2=new Card("QC");
 		print(card2.toString());
@@ -36,10 +39,7 @@ public class CrazyEights extends MyWindow {
 		}
 		else{
 			print(c+" is not a valid suit");
-		} */
-		
-		Deck deck=new Deck();
-		print(deck.toString());
+		}
 	}
 	
 
