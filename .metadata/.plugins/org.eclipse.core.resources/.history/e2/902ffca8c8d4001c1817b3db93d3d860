@@ -1,0 +1,19 @@
+package ezmet.enver.cards;
+
+import java.util.ArrayList;
+import java.util.Random;
+
+public class Deck {
+	private ArrayList<Card> cards=new ArrayList<Card>();
+	Random rand=new Random();
+
+	public Deck() {
+		for(int i=0;i<52;i++){
+			Card card=new Card(i);
+			cards.add(card);
+			
+		}
+	
+	}
+
+}
