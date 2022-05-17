@@ -35,18 +35,5 @@ public class Deck {
 		}
 		cards = shuffled;
 	}
-	
-	public Card deal(){
-		Card card=cards.remove(0);
-		return card;
-	}
-	
-	public void reuse(ArrayList<Card> newCards){
-		cards=newCards;
-	}
-	
-	public int size(){
-		return cards.size();
-	}
 
 }

@@ -48,12 +48,11 @@ public class CrazyEights extends MyWindow {
 			Card card=deck.deal();
 			print(card.toString());
 			discardPile.add(card);
-		}
 			print(deck.size());
 			deck.reuse(discardPile);
 			print(deck.toString());
 			print(deck.size());
-		
+		}
 	}
 	
 
