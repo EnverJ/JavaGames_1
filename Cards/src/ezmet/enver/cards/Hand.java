@@ -26,7 +26,7 @@ public class Hand {
 			// if this is not the first card, compare it with the previous card.
 			// if the suits are different add a couple extra space
 			if (i > 0) {
-				Card priorCard = cards.get(i - 1);
+				Card priorCard = cards.get(i-1);
 				char priorSuit = priorCard.getSuit();
 				char currentSuit = card.getSuit();
 				if (priorSuit != currentSuit) {
@@ -68,8 +68,8 @@ public class Hand {
 		return contains;
 	}
 	
-    public Card cardAt(int index){
-    	return cards.get(index);
+    public Card cardAt(int i){
+    	return cards.get(i);
     	
     }
     
