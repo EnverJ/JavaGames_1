@@ -67,11 +67,6 @@ public class CrazyEights extends MyWindow {
 		print();
 		print("Your drew is "+  drewCard);
 		myHand.add(drewCard);
-		//if I can play my drawn card, play it
-		if(isValidPlay(drewCard.toString())){
-			print("You played "+drewCard);
-			discardMyCard(drewCard);
-		}
 	}
 	private void discardMyCard(Card myCard){
 		myHand.remove(myCard);
@@ -81,25 +76,18 @@ public class CrazyEights extends MyWindow {
 	
 	private void playMyCard(){
 		showStatus();
-		boolean validPlay=false;
-		// repean until the valid has been entered
-		while(!validPlay){
 		String rankSuit=promtFor("Which card do you want to play? or press D to draw.");
 		rankSuit=rankSuit.toUpperCase();
 		//if draw, draw a card
 		if(rankSuit.equals("D")){
 			drawMyCard();
-			validPlay=true;
-		}
-	
-		//else play the card
-		else if(isValidPlay(rankSuit)){
+		}//else play the card
+		else{
 			Card selectedCard=new Card(rankSuit);
 			discardMyCard(selectedCard);
-			validPlay=true;
 		}
 	}
-	}
+	
 	public boolean isValidPlay(String rankSuit){
 		boolean validPlay=true;
 		Card card=new Card(rankSuit);
