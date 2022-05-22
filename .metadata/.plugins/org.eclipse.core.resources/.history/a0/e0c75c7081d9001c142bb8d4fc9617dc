@@ -32,6 +32,7 @@ public class CrazyEights extends MyWindow {
 			} else {
 				activeSuit = ' ';
 			}
+
 		}
 		playMyCard();
 		showStatus();
