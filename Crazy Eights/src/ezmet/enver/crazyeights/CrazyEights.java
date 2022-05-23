@@ -34,6 +34,7 @@ public class CrazyEights extends MyWindow {
 			}
 		}
 		playMyCard();
+		playComputerCard();
 		showStatus();
 	}
 
@@ -59,66 +60,106 @@ public class CrazyEights extends MyWindow {
 		Card card = deck.deal();
 		return card;
 	}
-	
+
 	// 16.8 Your turn
-	private void drawMyCard(){
-		Card drewCard=deal();
+	private void drawMyCard() {
+		Card drewCard = deal();
 		print();
-		print("Your drew is "+  drewCard);
+		print("Your drew is " + drewCard);
 		myHand.add(drewCard);
-		//if I can play my drawn card, play it
-		if(isValidPlay(drewCard.toString())){
-			print("You played "+drewCard);
+		// if I can play my drawn card, play it
+		if (isValidPlay(drewCard.toString())) {
+			print("You played " + drewCard);
 			discardMyCard(drewCard);
 		}
 	}
-	private void discardMyCard(Card myCard){
+
+	private void discardMyCard(Card myCard) {
 		myHand.remove(myCard);
 		discardPile.add(myCard);
-		discard=myCard;
+		discard = myCard;
 	}
-	
-	private void playMyCard(){
+
+	private void playMyCard() {
 		showStatus();
-		boolean validPlay=false;
+		boolean validPlay = false;
 		// repean until the valid has been entered
-		while(!validPlay){
-		String rankSuit=promtFor("Which card do you want to play? or press D to draw.");
-		rankSuit=rankSuit.toUpperCase();
-		//if draw, draw a card
-		if(rankSuit.equals("D")){
-			drawMyCard();
-			validPlay=true;
-		}
-	
-		//else play the card
-		else if(isValidPlay(rankSuit)){
-			Card selectedCard=new Card(rankSuit);
-			discardMyCard(selectedCard);
-			validPlay=true;
+		while (!validPlay) {
+			String rankSuit = promtFor("Which card do you want to play? or press D to draw.");
+			rankSuit = rankSuit.toUpperCase();
+			// if draw, draw a card
+			if (rankSuit.equals("D")) {
+				drawMyCard();
+				validPlay = true;
+			}
+
+			// else play the card
+			else if (isValidPlay(rankSuit)) {
+				Card selectedCard = new Card(rankSuit);
+				discardMyCard(selectedCard);
+				validPlay = true;
+			}
 		}
 	}
-	}
-	public boolean isValidPlay(String rankSuit){
-		boolean validPlay=true;
-		Card card=new Card(rankSuit);
-		//is it a valid card?
-		if(!card.isValid()){
-			print(rankSuit+" is not a valid card.");
-			validPlay=false;
+
+	public boolean isValidPlay(String rankSuit) {
+		boolean validPlay = true;
+		Card card = new Card(rankSuit);
+		// is it a valid card?
+		if (!card.isValid()) {
+			print(rankSuit + " is not a valid card.");
+			validPlay = false;
 		}
 		// is the card in my hand?
-		else if(!myHand.contains(card)){
-			print(rankSuit+" is not in my hand.");
-			validPlay=false;
-			}
+		else if (!myHand.contains(card)) {
+			print(rankSuit + " is not in my hand.");
+			validPlay = false;
+		}
 		// dose the discard match the rank of suit?
-		else if((card.getSuit()!=discard.getSuit())&& (card.getRank()!=discard.getRank())){
-			print(rankSuit+" can not be palyed on "+discard);
-			validPlay=false;
+		else if ((card.getSuit() != discard.getSuit()) && (card.getRank() != discard.getRank())) {
+			print(rankSuit + " can not be palyed on " + discard);
+			validPlay = false;
 		}
 		return validPlay;
-		
+
+	}
+
+	private void discardComputeGame(Card computerCard) {
+		computerHand.remove(computerCard);
+		discardPile.add(discard);
+		discard = computerCard;
+
+	}
+
+	private void playComputerCard() {
+		System.out.println("Computer Hand: " + computerHand.toString());
+		ArrayList<Card> playableCards = new ArrayList<Card>();
+		for (int i = 0; i < computerHand.size(); i++) {
+			Card card = computerHand.cardAt(i);
+			if ((card.getSuit() == discard.getSuit()) || card.getRank() == discard.getRank()) {
+				playableCards.add(card);
+			}
+		}
+		// pick a random palyable card
+		int numberOfPlayableCards = playableCards.size();
+		if (numberOfPlayableCards > 0) {
+			int pick = rand.nextInt(numberOfPlayableCards);
+			Card playedCard = playableCards.get(pick);
+			discardComputeGame(playedCard);
+
+		}
+		// if nothing could play, drew a card
+		else {
+			Card drewCard = deal();
+			computerHand.add(drewCard);
+			print();
+			print("Computer drewed " + drewCard);
+			// if it plays, play it
+			if (drewCard.getSuit() == discard.getSuit() || drewCard.getRank() == discard.getRank()) {
+				discardComputeGame(drewCard);
+			}
+
+		}
 	}
 
 	public static void main(String[] args) {
