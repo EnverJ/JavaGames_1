@@ -32,7 +32,7 @@ public class CrazyEights extends MyWindow {
 			} else {
 				activeSuit = ' ';
 			}
-		}
+	//	}
 		// play until wither of us runs out of cards
 		boolean done = false;
 		while (!done) {
@@ -42,7 +42,7 @@ public class CrazyEights extends MyWindow {
 				done = true;
 			} else {
 				playComputerCard();
-				// are there any cards left in the computer hand?
+				// are there any cards left in the compputer hand?
 				if (computerHand.size() == 0) {
 					done = true;
 				}
@@ -50,7 +50,7 @@ public class CrazyEights extends MyWindow {
 		}
 
 	}
-
+	}
 	// showStatus();
 
 	public void showStatus() {
@@ -130,23 +130,10 @@ public class CrazyEights extends MyWindow {
 			print(rankSuit + " is not in my hand.");
 			validPlay = false;
 		}
-		// 8s are always valid. If the card is not an 8...
-		else if (card.getRank() == '8') {
-
-			// is the discard an '8'?
-			if (discard.getRank() == '8') {
-				// does the card match the active suit?
-				if (card.getSuit() != activeSuit) {
-					print(rankSuit + " cannot be palyed on " + discard + " because the suit was set to " + activeSuit);
-					validPlay = false;
-				}
-			}
-			// if the discard is not an '8'
-			// dose the discard match the rank of suit?
-			else if ((card.getSuit() != discard.getSuit()) && (card.getRank() != discard.getRank())) {
-				print(rankSuit + " can not be palyed on " + discard);
-				validPlay = false;
-			}
+		// dose the discard match the rank of suit?
+		else if ((card.getSuit() != discard.getSuit()) && (card.getRank() != discard.getRank())) {
+			print(rankSuit + " can not be palyed on " + discard);
+			validPlay = false;
 		}
 		return validPlay;
 

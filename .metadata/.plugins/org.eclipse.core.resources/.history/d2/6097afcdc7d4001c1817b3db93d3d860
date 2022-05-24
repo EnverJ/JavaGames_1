@@ -1,9 +1,0 @@
-package ezmet.enver.cards;
-
-public class Deck {
-
-	public Deck() {
-		// TODO Auto-generated constructor stub
-	}
-
-}
