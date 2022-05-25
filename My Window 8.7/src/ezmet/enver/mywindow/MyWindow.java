@@ -65,4 +65,21 @@ public class MyWindow extends DIYWindow {
 		return yes;
 	}
 
+	protected char promtForChar(String prompt) {
+		char c = ' ';
+		boolean valid = false;
+		while (!valid) {
+			print(prompt);
+			String s = input();
+			if (s.length() == 1) {
+				c = s.charAt(0);
+				valid = true;
+			} else {
+				c = promtForChar(prompt);
+			}
+
+		}
+		return c;
+	}
+
 }
