@@ -16,6 +16,10 @@ public class CrazyEights extends MyWindow {
 	private ArrayList<Card> discardPile = new ArrayList<Card>();
 	private Random rand = new Random();
 	private char activeSuit = ' ';
+	private int countHearts = 0;
+	private int countDiamonds = 0;
+	private int countClubs = 0;
+	private int countSpades = 0;
 
 	public CrazyEights() {
 		setFontSize(30);
@@ -93,6 +97,9 @@ public class CrazyEights extends MyWindow {
 		myHand.remove(myCard);
 		discardPile.add(myCard);
 		discard = myCard;
+		if (myCard.getRank() == '8') {
+			activeSuit = promtForSuit();
+		}
 	}
 
 	private void playMyCard() {
@@ -131,7 +138,7 @@ public class CrazyEights extends MyWindow {
 			validPlay = false;
 		}
 		// 8s are always valid. If the card is not an 8...
-		else if (card.getRank() == '8') {
+		else if (card.getRank() != '8') {
 
 			// is the discard an '8'?
 			if (discard.getRank() == '8') {
@@ -143,7 +150,7 @@ public class CrazyEights extends MyWindow {
 			}
 			// if the discard is not an '8'
 			// dose the discard match the rank of suit?
-			else if ((card.getSuit() != discard.getSuit()) && (card.getRank() != discard.getRank())) {
+			else if (card.getSuit() != discard.getSuit() && card.getRank() != discard.getRank()) {
 				print(rankSuit + " can not be palyed on " + discard);
 				validPlay = false;
 			}
@@ -156,12 +163,84 @@ public class CrazyEights extends MyWindow {
 		computerHand.remove(computerCard);
 		discardPile.add(discard);
 		discard = computerCard;
+		if (discard.getRank() == '8') {
+			int highestCount = countHearts;
+			activeSuit = 'H';
+			if (countDiamonds > highestCount) {
+				highestCount = countDiamonds;
+				activeSuit = 'D';
 
+			}
+			if (countClubs > highestCount) {
+				highestCount = countClubs;
+				activeSuit = 'C';
+
+			}
+			if (countSpades > highestCount) {
+				highestCount = countSpades;
+				activeSuit = 'C';
+
+			}
+		}
 	}
 
 	private void playComputerCard() {
 		System.out.println("Computer Hand: " + computerHand.toString());
 		ArrayList<Card> playableCards = new ArrayList<Card>();
+
+		ArrayList<Card> eights = new ArrayList<>();
+		countHearts = 0;
+		countDiamonds = 0;
+		countClubs = 0;
+		countSpades = 0;
+		// count eights and number of each suit
+		for (int i = 0; i < computerHand.size(); i++) {
+			Card card = computerHand.cardAt(i);
+			if (card.getSuit() == '8') {
+				eights.add(card);
+			}
+			// otherwise,count the number of each suit
+			else {
+				switch (card.getSuit()) {
+				case 'H':
+					countHearts++;
+					break;
+				case 'D':
+					countDiamonds++;
+					break;
+				case 'C':
+					countClubs++;
+					break;
+				case 'S':
+					countSpades++;
+					break;
+				}
+			}
+
+		}
+		// make a list of playable cards
+		for (int i = 0; i < computerHand.size(); i++) {
+			Card card = computerHand.cardAt(i);
+			// if discard is an 8, all cards of active suit are playable
+			if (discard.getRank() == '8') {
+				if (card.getSuit() == activeSuit) {
+					playableCards.add(card);
+				}
+			}
+			/*
+			 * // else, if discard is not an 8 // only cards of that suit or
+			 * rank are palyable else
+			 * if(card.getSuit()==discard.getSuit()||card.getRank()==discard.
+			 * getRank()){ playableCards.add(card); } } // play a random
+			 * playable card int numberOfPlayableCards=playableCards.size();
+			 * if(numberOfPlayableCards>0){ int
+			 * pick=rand.nextInt(numberOfPlayableCards); Card
+			 * playedCard=playableCards.get(pick);
+			 * discardComputeGame(playedCard); } // otherwise, if have an eight,
+			 * play an eight else if(eights.size()>0){ Card
+			 * playedCard=eights.get(0) }
+			 */
+		}
 		for (int i = 0; i < computerHand.size(); i++) {
 			Card card = computerHand.cardAt(i);
 			if ((card.getSuit() == discard.getSuit()) || card.getRank() == discard.getRank()) {
@@ -176,6 +255,12 @@ public class CrazyEights extends MyWindow {
 			discardComputeGame(playedCard);
 
 		}
+
+		else if (eights.size() > 0) {
+			Card playedCard = eights.get(0);
+			discardComputeGame(playedCard);
+		}
+
 		// if nothing could play, drew a card
 		else {
 			Card drewCard = deal();
@@ -188,6 +273,20 @@ public class CrazyEights extends MyWindow {
 			}
 
 		}
+
+	}
+
+	private char promtForSuit() {
+		char suit = ' ';
+		boolean validSuit = false;
+		while (!validSuit) {
+			suit = promtForChar("Change the suit to H, D, C, OR S?");
+			suit = Character.toUpperCase(suit);
+			if (Card.isValidSuit(suit)) {
+				validSuit = true;
+			}
+		}
+		return suit;
 	}
 
 	public static void main(String[] args) {
